@@ -1,15 +1,29 @@
-import React, { useEffect } from 'react';
-import { HomePageStyled } from './HomePage.styled';
+import Button from '../../components/Button/Button';
+import React from 'react';
+import IconContainer from '../../components/IconContainer/IconContainer';
+import { PageLimiterStyled } from '../../components/PageLimiter/PageLimiter.styled';
+import NavMenu from './components/NavMenu/NavMenu';
+import {
+  HeroImageWrapStyled,
+  HomePageStyled,
+  TopMenuWrapStyled,
+} from './HomePage.styled';
 
 const HomePage: React.FC = () => {
   return (
     <HomePageStyled>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
-        mollitia iusto, minus praesentium rerum aliquid eveniet! Quia, veritatis
-        quae nobis quis culpa itaque cumque, mollitia necessitatibus assumenda
-        ullam explicabo nihil.
-      </p>
+      <HeroImageWrapStyled imgUrl="/src/assets/images/landing-hero.jpg" />
+      <PageLimiterStyled>
+        <TopMenuWrapStyled>
+          <IconContainer
+            width={95}
+            height={78}
+            src="/src/assets/images/logo.png"
+          />
+          <NavMenu />
+          <Button text="Book Now" variant="primary" onClick={() => {}} />
+        </TopMenuWrapStyled>
+      </PageLimiterStyled>
     </HomePageStyled>
   );
 };
